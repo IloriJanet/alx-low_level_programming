@@ -7,7 +7,7 @@
  * numbers that are multiples of 3 n 5 print fizbuzz
  * each number and word to be separated by space
  *
- * Return: Always 0 (Success)
+ * Return: Always return 0
  */
 
 int main(void)
@@ -21,6 +21,10 @@ int main(void)
 			if (x % 3 == 0)
 			{
 				printf("Fizz");
+			}
+			if (x % 5 == 0)
+			{
+				printf("Buzz");
 			}
 		}
 		else
