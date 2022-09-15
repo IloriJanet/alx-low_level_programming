@@ -21,7 +21,7 @@ int main(void)
 			x = x / y;
 		}
 	}
-	printf("lu", y);
+	printf("%lu", y);
 	putchar('\n');
 	return (0);
 }
