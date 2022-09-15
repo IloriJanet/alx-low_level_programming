@@ -2,7 +2,7 @@
 
 /**
  * main - print numbers 1 - 100 followed by a new line
- * nubers that are multiples of 3 print fizz
+ * numbers that are multiples of 3 print fizz
  * numbers that are multiples of 5 print buzz
  * numbers that are multiples of 3 n 5 print fizbuzz
  * each number and word to be separated by space
