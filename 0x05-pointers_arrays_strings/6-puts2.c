@@ -2,8 +2,8 @@
 
 /**
  * puts2 - print reverse characters
- * str: validate the character
- * Return: Always return 0.
+ * @str: validate the character
+ * Return: Always 0.
  */
 
 void puts2(char *str)
