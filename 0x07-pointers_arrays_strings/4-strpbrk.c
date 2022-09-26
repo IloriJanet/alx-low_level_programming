@@ -35,7 +35,7 @@ char *_strpbrk(char *s, char *accept)
 	}
 	if (exist == 1)
 	{
-		return ($s[len]);
+		return (&s[len]);
 	}
 	else
 	{
