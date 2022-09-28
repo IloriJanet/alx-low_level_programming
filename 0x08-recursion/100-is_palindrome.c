@@ -1,48 +1,50 @@
 #include "main.h"
 
 /**
- * palind2 - Obtain length of a
- * @a: string
- * @1: integer to count length
- *
- * Return: Always 1 on success.
+ * _strlen_recursion - size
+ * @s: pointer to string params
+ * Return: recursion
  */
 
-int palind2(char *a, int l)
+int _strlen_recursion(char *s)
 {
-	if (*a == 0)
-		return (l - 1);
-	return (palind2(a + 1, l + 1));
-}
-
-/**
- * palind3 - compares string vs string reverse
- * @a: string
- * @l: length
- *
- * Return: Always 1 on success
- */
-
-int palind3(char *a, int l)
-{
-	if (*a != *(a + l))
+	if (!*s)
+	{
 		return (0);
-	else if (*a == 0)
-		return (1);
-	return (palind3(a + 1, l - 2));
+	}
+	return (1 + _strlen_recursion(++s));
 }
 
 /**
- * is_palindrome - checks if a string is a palidrome
- * @s: string to evaluate
- *
- * Return: Always 1 on success
+ * p1 - palindrome
+ * @s: pointer to string
+ * @l: position
+ * Return: boolena
+ */
+
+int p1(char *s, int l)
+{
+	if (l < 1)
+	{
+		return (1);
+	}
+
+	if (*s == *(s + l))
+	{
+		return (p1(s + 1, l - 2));
+	}
+	return (0);
+}
+
+/**
+ * is_palindrome - palindrome
+ * @s: pointer to string
+ * Return: recursion
  */
 
 int is_palindrome(char *s)
 {
-	int l;
+	int len = _strlen_recursion(s);
 
-	l = palind2(s, 0);
-	return (palind3(s, 1));
+	return (p1(s, len - 1));
 }
