@@ -6,8 +6,7 @@
  * @num: input params
  * Return: coins
  */
-
-int calculate_cents(int num)
+int main(int argc, char *argv[])
 {
 	int coins = 0;
 
