@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -10,7 +8,6 @@
  */
 int main(int argc, char *argv[])
 {
-
 unsigned long mul;
 int i, j;
         if (argc != 3)
