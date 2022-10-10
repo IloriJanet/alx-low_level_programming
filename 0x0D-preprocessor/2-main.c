@@ -7,7 +7,7 @@
  * followed by a new line.
  *
  *
- * Return: Always return 0
+ * Return: Always 0 (Success)
  */
 
 int main(void)
