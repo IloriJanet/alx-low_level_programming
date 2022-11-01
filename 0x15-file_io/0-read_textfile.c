@@ -1,38 +1,44 @@
 #include "main.h"
+
 /**
- * read_textfile - reads a text file and prints it to the standard output
- * @filename: name of the file to be read
- * @letters: number of letters to read and print.
- * Return: the number of letters printed, or 0 if it failed
+ * read_textfile - check the code for ALX School students.
+ * @filename: file to read and write
+ * @letters: number of letters to read and write.
+ * Return: letters printed
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	ssize_t lenr, lenw;
-	char *buffer;
+	ssize_t nletters;
+	int file;
+	char *text;
 
-	if (filename == NULL)
+	if (!filename)
 		return (0);
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+	text = malloc(sizeof(char) * letters + 1);
+	if (text == NULL)
 		return (0);
-	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL)
+	file = open(filename, O_RDONLY);
+	if (file == -1)
 	{
-		close(fd);
+		free(text);
 		return (0);
 	}
-	lenr = read(fd, buffer, letters);
-	close(fd);
-	if (lenr == -1)
+	nletters = read(file, text, sizeof(char) * letters);
+	if (nletters == -1)
 	{
-		free(buffer);
+		free(text);
+		close(file);
 		return (0);
 	}
-	lenw = write(STDOUT_FILENO, buffer, lenr);
-	free(buffer);
-	if (lenr != lenw)
+	nletters = write(STDOUT_FILENO, text, nletters);
+	if (nletters == -1)
+	{
+		free(text);
+		close(file);
 		return (0);
-	return (lenw);
+	}
+	free(text);
+	close(file);
+	return (nletters);
 }
